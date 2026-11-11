@@ -1,0 +1,31 @@
+text,label,category
+"URGENT! Your account is suspended, send your bank details to verify",spam,phishing
+"Your parcel could not be delivered. Pay a small fee at http://track-parcel.info to reschedule",spam,delivery scam
+"Dear customer, your KYC is expiring today. Update now at http://bank-kyc-update.in or your account will be blocked",spam,phishing
+"Congratulations! You won a free prize, click http://claim.biz now",spam,prize scam
+"Earn 5000 per day working from home. No experience needed. WhatsApp us now",spam,job scam
+"Your electricity will be disconnected tonight. Call 9876543210 immediately to avoid the cut",spam,utility scam
+"Get a pre-approved loan of 50000 with no documents. Reply YES to apply",spam,loan scam
+"You have received a refund of Rs 4250. Click here to claim: http://refund-claim.co",spam,refund scam
+"FREE entry to win an iPhone 15! Text WIN to 80082 now. T&C apply",spam,prize scam
+"Double your bitcoin in 24 hours. Guaranteed returns. Join our group today",spam,crypto scam
+"Hi dear, I am a lonely lady looking for a friend. Message me for photos",spam,romance scam
+"Final notice: your Netflix payment failed. Update your card details here to avoid cancellation",spam,phishing
+"Internship offer! Pay a 2000 registration fee to confirm your seat at a top company",spam,job scam
+"Winner! You are our lucky customer. Claim your gift voucher worth 5000 now",spam,prize scam
+"Limited offer: 90% discount on branded watches. Order now before stock runs out",spam,promo spam
+"Hi, can you send me the DBMS assignment notes before the lab tomorrow?",ham,class message
+"Are we still meeting for the project discussion at 4 pm?",ham,class message
+"Your OTP is 482913. Do not share it with anyone.",ham,one-time code
+"Your account has been debited by Rs 450 at the canteen. Available balance is Rs 3200",ham,bank alert
+"Your order has been shipped and will arrive on Friday. Track it in the app",ham,real delivery
+"Reminder: the internal exam starts Monday at 9 am, syllabus is on the notice board",ham,class message
+"Happy birthday! Hope you have a great day, see you at the party this evening",ham,personal
+"Please find attached the minutes of today's team meeting. Let me know if I missed anything",ham,work
+"Your library book is due on Thursday. Please return or renew it",ham,reminder
+"Mom called, she said dinner is at 8, don't be late",ham,personal
+"Interview scheduled for Tuesday 11 am. Please bring a copy of your resume",ham,work
+"Your appointment with Dr. Rao is confirmed for tomorrow at 5 pm",ham,appointment
+"Thanks for the notes, they were really helpful. I will return them on Monday",ham,class message
+"Can you share the GitHub link for our project? I want to review the code",ham,class message
+"Your password was changed successfully. If this was not you, contact support through the official app",ham,security alert

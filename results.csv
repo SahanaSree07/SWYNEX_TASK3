@@ -1,0 +1,3 @@
+model,accuracy,precision,recall,f1
+Multinomial Naive Bayes,0.9768,0.9908,0.8244,0.9
+Logistic Regression,0.9662,0.8117,0.9542,0.8772

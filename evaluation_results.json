@@ -1,0 +1,299 @@
+{
+  "pretrained_model": "mshenoda/roberta-spam",
+  "test_set": {
+    "size": 1035,
+    "spam": 131,
+    "models": {
+      "naive_bayes": {
+        "accuracy": 0.9768,
+        "precision": 0.9908,
+        "recall": 0.8244,
+        "f1": 0.9,
+        "tn": 903,
+        "fp": 1,
+        "fn": 23,
+        "tp": 108,
+        "failure_count": 24,
+        "failures": [
+          {
+            "text": "In The Simpsons Movie released in July 2007 name the band that died at the start of the film? A-Green Day, B-Blue Day, C-Red Day. (Send A, B or C)",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.0103,
+            "kind": "missed spam",
+            "category": ""
+          },
+          {
+            "text": "Babe: U want me dont u baby! Im nasty and have a thing 4 filthyguys. Fancy a rude time with a sexy bitch. How about we go slo n hard! Txt XXX SLO(4msgs)",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.0108,
+            "kind": "missed spam",
+            "category": ""
+          },
+          {
+            "text": "Xmas & New Years Eve tickets are now on sale from the club, during the day from 10am till 8pm, and on Thurs, Fri & Sat night this week. They're selling fast!",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.0332,
+            "kind": "missed spam",
+            "category": ""
+          },
+          {
+            "text": "Check Out Choose Your Babe Videos @ sms.shsex.netUN fgkslpoPW fgkslpo",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.056,
+            "kind": "missed spam",
+            "category": ""
+          },
+          {
+            "text": "SMS. ac sun0819 posts HELLO:\"You seem cool, wanted to say hi. HI!!!\" Stop? Send STOP to 62468",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.0745,
+            "kind": "missed spam",
+            "category": ""
+          },
+          {
+            "text": "Missed call alert. These numbers called but left no message. 07008009200",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.0934,
+            "kind": "missed spam",
+            "category": ""
+          },
+          {
+            "text": "Burger King - Wanna play footy at a top stadium? Get 2 Burger King before 1st Sept and go Large or Super with Coca-Cola and walk out a winner",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.1425,
+            "kind": "missed spam",
+            "category": ""
+          },
+          {
+            "text": "Hi babe its Jordan, how r u? Im home from abroad and lonely, text me back if u wanna chat xxSP visionsms.com Text stop to stopCost 150p 08712400603",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.1908,
+            "kind": "missed spam",
+            "category": ""
+          },
+          {
+            "text": "Want explicit SEX in 30 secs? Ring 02073162414 now! Costs 20p/min",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.2114,
+            "kind": "missed spam",
+            "category": ""
+          },
+          {
+            "text": "Would you like to see my XXX pics they are so hot they were nearly banned in the uk!",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.2146,
+            "kind": "missed spam",
+            "category": ""
+          },
+          {
+            "text": "FreeMsg Hey U, i just got 1 of these video/pic fones, reply WILD to this txt & ill send U my pics, hurry up Im so bored at work xxx (18 150p/rcvd STOP2stop)",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.2155,
+            "kind": "missed spam",
+            "category": ""
+          },
+          {
+            "text": "Latest News! Police station toilet stolen, cops have nothing to go on!",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.2402,
+            "kind": "missed spam",
+            "category": ""
+          },
+          {
+            "text": "ASKED 3MOBILE IF 0870 CHATLINES INCLU IN FREE MINS. INDIA CUST SERVs SED YES. L8ER GOT MEGA BILL. 3 DONT GIV A SHIT. BAILIFF DUE IN DAYS. I O \u00a3250 3 WANT \u00a3800",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.2443,
+            "kind": "missed spam",
+            "category": ""
+          },
+          {
+            "text": "Thanks for the Vote. Now sing along with the stars with Karaoke on your mobile. For a FREE link just reply with SING now.",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.2701,
+            "kind": "missed spam",
+            "category": ""
+          },
+          {
+            "text": "ringtoneking 84484",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.2799,
+            "kind": "missed spam",
+            "category": ""
+          }
+        ]
+      },
+      "pretrained": {
+        "accuracy": 0.999,
+        "precision": 1.0,
+        "recall": 0.9924,
+        "f1": 0.9962,
+        "tn": 904,
+        "fp": 0,
+        "fn": 1,
+        "tp": 130,
+        "failure_count": 1,
+        "failures": [
+          {
+            "text": "Latest News! Police station toilet stolen, cops have nothing to go on!",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.0,
+            "kind": "missed spam",
+            "category": ""
+          }
+        ]
+      }
+    }
+  },
+  "stress_set": {
+    "size": 30,
+    "spam": 15,
+    "models": {
+      "naive_bayes": {
+        "accuracy": 0.6333,
+        "precision": 1.0,
+        "recall": 0.2667,
+        "f1": 0.4211,
+        "tn": 15,
+        "fp": 0,
+        "fn": 11,
+        "tp": 4,
+        "failure_count": 11,
+        "failures": [
+          {
+            "text": "Earn 5000 per day working from home. No experience needed. WhatsApp us now",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.0152,
+            "kind": "missed spam",
+            "category": "job scam"
+          },
+          {
+            "text": "Hi dear, I am a lonely lady looking for a friend. Message me for photos",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.0183,
+            "kind": "missed spam",
+            "category": "romance scam"
+          },
+          {
+            "text": "Internship offer! Pay a 2000 registration fee to confirm your seat at a top company",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.0547,
+            "kind": "missed spam",
+            "category": "job scam"
+          },
+          {
+            "text": "Your electricity will be disconnected tonight. Call 9876543210 immediately to avoid the cut",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.0986,
+            "kind": "missed spam",
+            "category": "utility scam"
+          },
+          {
+            "text": "Your parcel could not be delivered. Pay a small fee at http://track-parcel.info to reschedule",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.1283,
+            "kind": "missed spam",
+            "category": "delivery scam"
+          },
+          {
+            "text": "Double your bitcoin in 24 hours. Guaranteed returns. Join our group today",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.1392,
+            "kind": "missed spam",
+            "category": "crypto scam"
+          },
+          {
+            "text": "Limited offer: 90% discount on branded watches. Order now before stock runs out",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.2095,
+            "kind": "missed spam",
+            "category": "promo spam"
+          },
+          {
+            "text": "Final notice: your Netflix payment failed. Update your card details here to avoid cancellation",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.2299,
+            "kind": "missed spam",
+            "category": "phishing"
+          },
+          {
+            "text": "URGENT! Your account is suspended, send your bank details to verify",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.2684,
+            "kind": "missed spam",
+            "category": "phishing"
+          },
+          {
+            "text": "Dear customer, your KYC is expiring today. Update now at http://bank-kyc-update.in or your account will be blocked",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.2966,
+            "kind": "missed spam",
+            "category": "phishing"
+          },
+          {
+            "text": "Get a pre-approved loan of 50000 with no documents. Reply YES to apply",
+            "truth": "SPAM",
+            "predicted": "NOT SPAM",
+            "spam_prob": 0.3202,
+            "kind": "missed spam",
+            "category": "loan scam"
+          }
+        ]
+      },
+      "pretrained": {
+        "accuracy": 0.9333,
+        "precision": 0.8824,
+        "recall": 1.0,
+        "f1": 0.9375,
+        "tn": 13,
+        "fp": 2,
+        "fn": 0,
+        "tp": 15,
+        "failure_count": 2,
+        "failures": [
+          {
+            "text": "Your password was changed successfully. If this was not you, contact support through the official app",
+            "truth": "NOT SPAM",
+            "predicted": "SPAM",
+            "spam_prob": 0.9999,
+            "kind": "false alarm",
+            "category": "security alert"
+          },
+          {
+            "text": "Your account has been debited by Rs 450 at the canteen. Available balance is Rs 3200",
+            "truth": "NOT SPAM",
+            "predicted": "SPAM",
+            "spam_prob": 0.9998,
+            "kind": "false alarm",
+            "category": "bank alert"
+          }
+        ]
+      }
+    }
+  }
+}

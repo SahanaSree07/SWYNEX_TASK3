@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spam check: decision, explanation and evaluation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+
+    <header class="top">
+      <div class="brand">
+        <h1>Spam check</h1>
+        <p>Two models read the same message. The app combines them into one decision, explains it, and flags messages a person should review.</p>
+      </div>
+      <ul class="status" aria-label="Model status">
+        <li id="st-nb" data-state="loading"><span class="dot" aria-hidden="true"></span><span class="st-name">Naive Bayes</span><span class="st-text">checking</span></li>
+        <li id="st-hf" data-state="loading"><span class="dot" aria-hidden="true"></span><span class="st-name">Pretrained</span><span class="st-text">loading</span></li>
+      </ul>
+    </header>
+
+    <main class="grid">
+
+      <section class="composer" aria-labelledby="msg-label">
+        <label id="msg-label" for="msg" class="field-label">Message to check</label>
+        <textarea id="msg" rows="9" maxlength="5000" placeholder="Paste an email or text message here"></textarea>
+        <div class="field-foot">
+          <span id="msg-error" class="error" role="alert"></span>
+          <span id="count" class="count">0 / 5000</span>
+        </div>
+
+        <div class="chips" role="group" aria-label="Example messages">
+          <span class="chips-label">Try one</span>
+          <button type="button" class="chip" data-text="Congratulations! You won a free prize, click http://claim.biz now">Prize scam</button>
+          <button type="button" class="chip" data-text="URGENT! Your account is suspended, send your bank details to verify">Bank phishing</button>
+          <button type="button" class="chip" data-text="Your parcel could not be delivered. Pay a small fee at http://track-parcel.info to reschedule">Delivery scam</button>
+          <button type="button" class="chip" data-text="Hi, can you send me the DBMS assignment notes before the lab tomorrow?">Class message</button>
+          <button type="button" class="chip" data-text="Your OTP is 482913. Do not share it with anyone.">One-time code</button>
+        </div>
+
+        <div class="actions">
+          <button type="button" id="check" class="primary">Check message</button>
+          <button type="button" id="clear" class="ghost">Clear</button>
+          <span class="hint">Ctrl + Enter also works</span>
+        </div>
+      </section>
+
+      <section class="verdict" aria-labelledby="verdict-h" aria-live="polite">
+        <h2 id="verdict-h">Where each model puts this message</h2>
+        <ul id="warnings" class="warnings" hidden></ul>
+
+        <div class="ruler idle" id="ruler">
+          <div class="ruler-inner">
+            <div class="marker nb" id="mk-nb" aria-hidden="true">
+              <span class="chip-tag">Naive Bayes <b id="mk-nb-v">0%</b></span>
+              <span class="stem"></span><span class="pin"></span>
+            </div>
+            <div class="track" role="img" aria-label="Spam probability from 0 to 100 percent, with the threshold at 50 percent">
+              <div class="zone safe"></div>
+              <div class="zone spam"></div>
+            </div>
+            <span class="end-label left">Not spam</span>
+            <span class="end-label right">Spam</span>
+            <div class="marker hf" id="mk-hf" aria-hidden="true">
+              <span class="pin"></span><span class="stem"></span>
+              <span class="chip-tag">Pretrained <b id="mk-hf-v">0%</b></span>
+            </div>
+            <div class="scale" aria-hidden="true"><span>0%</span><span>50%</span><span>100%</span></div>
+          </div>
+          <p class="idle-note">Check a message and each model drops a marker on this line. The farther apart the markers, the less they agree.</p>
+        </div>
+
+        <div id="decision" class="decision" hidden>
+          <span class="decision-label">Decision</span>
+          <h3 id="decision-title"></h3>
+          <p id="decision-reason"></p>
+        </div>
+
+        <div class="models">
+          <article class="model nb" id="row-nb">
+            <div class="model-head">
+              <h3>Naive Bayes</h3>
+              <p>Our model, trained on 5,171 text messages</p>
+            </div>
+            <div class="model-out" id="out-nb"><span class="waiting">Waiting for a message</span></div>
+          </article>
+          <article class="model hf" id="row-hf">
+            <div class="model-head">
+              <h3>Pretrained model</h3>
+              <p id="hf-name">Ready-made spam detector from Hugging Face</p>
+            </div>
+            <div class="model-out" id="out-hf"><span class="waiting">Waiting for a message</span></div>
+          </article>
+        </div>
+
+        <div id="explain" class="explain" hidden>
+          <h3>Why Naive Bayes said this</h3>
+          <div class="explain-cols">
+            <div><h4>Pushed toward spam</h4><ul id="ex-spam" class="words spam"></ul></div>
+            <div><h4>Pushed toward not spam</h4><ul id="ex-safe" class="words safe"></ul></div>
+          </div>
+          <p class="ex-note">Words are shown after cleaning: links become "url" and numbers become "num". The strongest push comes first.</p>
+        </div>
+      </section>
+
+      <section class="history" aria-labelledby="hist-h">
+        <div class="section-head">
+          <h2 id="hist-h">This session</h2>
+          <button type="button" id="hist-clear" class="ghost small" hidden>Clear list</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th scope="col">Message</th><th scope="col">Naive Bayes</th><th scope="col">Pretrained</th><th scope="col">Decision</th></tr>
+            </thead>
+            <tbody id="hist-body"></tbody>
+          </table>
+          <p id="hist-empty" class="empty">Messages you check will collect here, so you can compare them side by side.</p>
+        </div>
+      </section>
+
+      <section class="metrics" id="metrics" aria-labelledby="met-h" hidden>
+        <h2 id="met-h">How the Naive Bayes model scored on held-out messages</h2>
+        <dl>
+          <div><dt>Accuracy</dt><dd id="m-accuracy">-</dd></div>
+          <div><dt>Precision</dt><dd id="m-precision">-</dd></div>
+          <div><dt>Recall</dt><dd id="m-recall">-</dd></div>
+          <div><dt>F1 score</dt><dd id="m-f1">-</dd></div>
+        </dl>
+        <p>Measured in Task 1 on 1,035 test messages. Precision is high because a real message marked as spam costs more than a missed spam.</p>
+      </section>
+
+      <section class="evaluation" aria-labelledby="eval-h">
+        <h2 id="eval-h">How well do the models do?</h2>
+        <p class="lead" id="eval-lead">Scores and failure cases from <code>python evaluate.py</code>.</p>
+        <div id="eval-body"></div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>Prototype for SWYNEX Task 3. No API keys are used. Both models learned from short English text messages, so long emails, other languages and unusual scams can be missed. A person should review anything marked "Needs review".</p>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

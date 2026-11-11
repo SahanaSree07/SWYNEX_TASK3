@@ -1,0 +1,30 @@
+set,model,text,truth,predicted,spam_prob,kind,category
+test_set,naive_bayes,"In The Simpsons Movie released in July 2007 name the band that died at the start of the film? A-Green Day, B-Blue Day, C-Red Day. (Send A, B or C)",SPAM,NOT SPAM,0.0103,missed spam,
+test_set,naive_bayes,Babe: U want me dont u baby! Im nasty and have a thing 4 filthyguys. Fancy a rude time with a sexy bitch. How about we go slo n hard! Txt XXX SLO(4msgs),SPAM,NOT SPAM,0.0108,missed spam,
+test_set,naive_bayes,"Xmas & New Years Eve tickets are now on sale from the club, during the day from 10am till 8pm, and on Thurs, Fri & Sat night this week. They're selling fast!",SPAM,NOT SPAM,0.0332,missed spam,
+test_set,naive_bayes,Check Out Choose Your Babe Videos @ sms.shsex.netUN fgkslpoPW fgkslpo,SPAM,NOT SPAM,0.056,missed spam,
+test_set,naive_bayes,"SMS. ac sun0819 posts HELLO:""You seem cool, wanted to say hi. HI!!!"" Stop? Send STOP to 62468",SPAM,NOT SPAM,0.0745,missed spam,
+test_set,naive_bayes,Missed call alert. These numbers called but left no message. 07008009200,SPAM,NOT SPAM,0.0934,missed spam,
+test_set,naive_bayes,Burger King - Wanna play footy at a top stadium? Get 2 Burger King before 1st Sept and go Large or Super with Coca-Cola and walk out a winner,SPAM,NOT SPAM,0.1425,missed spam,
+test_set,naive_bayes,"Hi babe its Jordan, how r u? Im home from abroad and lonely, text me back if u wanna chat xxSP visionsms.com Text stop to stopCost 150p 08712400603",SPAM,NOT SPAM,0.1908,missed spam,
+test_set,naive_bayes,Want explicit SEX in 30 secs? Ring 02073162414 now! Costs 20p/min,SPAM,NOT SPAM,0.2114,missed spam,
+test_set,naive_bayes,Would you like to see my XXX pics they are so hot they were nearly banned in the uk!,SPAM,NOT SPAM,0.2146,missed spam,
+test_set,naive_bayes,"FreeMsg Hey U, i just got 1 of these video/pic fones, reply WILD to this txt & ill send U my pics, hurry up Im so bored at work xxx (18 150p/rcvd STOP2stop)",SPAM,NOT SPAM,0.2155,missed spam,
+test_set,naive_bayes,"Latest News! Police station toilet stolen, cops have nothing to go on!",SPAM,NOT SPAM,0.2402,missed spam,
+test_set,naive_bayes,ASKED 3MOBILE IF 0870 CHATLINES INCLU IN FREE MINS. INDIA CUST SERVs SED YES. L8ER GOT MEGA BILL. 3 DONT GIV A SHIT. BAILIFF DUE IN DAYS. I O £250 3 WANT £800,SPAM,NOT SPAM,0.2443,missed spam,
+test_set,naive_bayes,Thanks for the Vote. Now sing along with the stars with Karaoke on your mobile. For a FREE link just reply with SING now.,SPAM,NOT SPAM,0.2701,missed spam,
+test_set,naive_bayes,ringtoneking 84484,SPAM,NOT SPAM,0.2799,missed spam,
+test_set,pretrained,"Latest News! Police station toilet stolen, cops have nothing to go on!",SPAM,NOT SPAM,0.0,missed spam,
+stress_set,naive_bayes,Earn 5000 per day working from home. No experience needed. WhatsApp us now,SPAM,NOT SPAM,0.0152,missed spam,job scam
+stress_set,naive_bayes,"Hi dear, I am a lonely lady looking for a friend. Message me for photos",SPAM,NOT SPAM,0.0183,missed spam,romance scam
+stress_set,naive_bayes,Internship offer! Pay a 2000 registration fee to confirm your seat at a top company,SPAM,NOT SPAM,0.0547,missed spam,job scam
+stress_set,naive_bayes,Your electricity will be disconnected tonight. Call 9876543210 immediately to avoid the cut,SPAM,NOT SPAM,0.0986,missed spam,utility scam
+stress_set,naive_bayes,Your parcel could not be delivered. Pay a small fee at http://track-parcel.info to reschedule,SPAM,NOT SPAM,0.1283,missed spam,delivery scam
+stress_set,naive_bayes,Double your bitcoin in 24 hours. Guaranteed returns. Join our group today,SPAM,NOT SPAM,0.1392,missed spam,crypto scam
+stress_set,naive_bayes,Limited offer: 90% discount on branded watches. Order now before stock runs out,SPAM,NOT SPAM,0.2095,missed spam,promo spam
+stress_set,naive_bayes,Final notice: your Netflix payment failed. Update your card details here to avoid cancellation,SPAM,NOT SPAM,0.2299,missed spam,phishing
+stress_set,naive_bayes,"URGENT! Your account is suspended, send your bank details to verify",SPAM,NOT SPAM,0.2684,missed spam,phishing
+stress_set,naive_bayes,"Dear customer, your KYC is expiring today. Update now at http://bank-kyc-update.in or your account will be blocked",SPAM,NOT SPAM,0.2966,missed spam,phishing
+stress_set,naive_bayes,Get a pre-approved loan of 50000 with no documents. Reply YES to apply,SPAM,NOT SPAM,0.3202,missed spam,loan scam
+stress_set,pretrained,"Your password was changed successfully. If this was not you, contact support through the official app",NOT SPAM,SPAM,0.9999,false alarm,security alert
+stress_set,pretrained,Your account has been debited by Rs 450 at the canteen. Available balance is Rs 3200,NOT SPAM,SPAM,0.9998,false alarm,bank alert
